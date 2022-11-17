@@ -1,13 +1,15 @@
 //By constructor function
-function Circle(rad){
+function Circle(rad) {
     this.radius = rad;
-    this.draw = function(){
+    this.draw = function () {
         console.log(`circle drawn with radius => ${rad}`);
     }
 }
 
+// new Circle(5).draw();
+// or
 let circle = new Circle(5);
-console.log(circle.draw());
+circle.draw()
 
 
 // //By factory function
