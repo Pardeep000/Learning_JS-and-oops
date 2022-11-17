@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",function(){
+            //
+            document.querySelector('#submit').disabled=true;
+            document.querySelector('#data').onkeyup=function(){
+                let data2 = document.querySelector('#data').value;
+                if(data2.length>0) document.querySelector('#submit').disabled=false;
+                else document.querySelector('#submit').disabled=true;
+            }
+            //
+            document.querySelector('form').onsubmit=function(){
+                const data = document.querySelector('#data').value;
+                //creation of element and assigning value to it;
+                let li = document.createElement('li');
+                li.innerHTML  = data;
+                //append
+                document.querySelector('#task').append(li);
+                //
+                document.querySelector('#data').value='';
+                document.querySelector('#submit').disabled=true;
+                //
+                return false;
+
+
+            }
+        })
+    </script>
+</head>
+<body>
+    <form action="">
+        <input type="text" id="data">
+        <button type="submit" id="submit">submit</button>
+        <!-- tasks -->
+        <ul id="task"></ul>
+    </form>
+</body>
+</html>

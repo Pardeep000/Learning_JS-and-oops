@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            document.querySelectorAll('#color').forEach((button)=>{
+                button.onclick = ()=>{
+                    document.querySelector('h1').style.color=button.dataset.color;
+                    document.querySelector('h1').innerHTML=button.innerHTML;
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    <h1>Hello World</h1>
+    <button data-color="red" id="color">RED</button>
+    <button data-color="green" id="color">GREEN</button>
+    <button data-color="blue" id="color">BLUE</button>
+</body>
+</html>
