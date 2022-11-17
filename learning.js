@@ -1,30 +1,34 @@
-function Circle(rad){
+function Circle(rad) {
     this.radius = rad;
-    this.draw = function(){
-        console.log(`circle is drawn of radius => ${rad}`);
+    this.draw = function () {
+        console.log('circle is drawn...\n');
+    };
+    //
+    let defaultLocation = { x: 1, y: 1 }
+    //
+    this.showDefaultLocation = function () {
+        console.log(defaultLocation);
     }
+    Object.defineProperty(this, 'location', {
+        get: function () {
+            console.log(defaultLocation);
+            // return defaultLocation;
+        },
+        set: function (value) {
+            if (!value.x || !value.y) {
+                throw new Error("invalid location")
+            }
+            defaultLocation = value;
+        }
+    });
 }
+
 
 let c1 = new Circle(5);
+
 c1.draw();
-c1.location={
-    x:5,
-    y:2
-}
-
-// c1.draw = function(){
-//     console.log(`circle is drawn with following parameters:\nradius = ${rad}\nlocation = ${x,y}`)
-// }
-
-console.log("circle object => ",c1);
-// console.log(c1.keys())
-console.log(Object.values(c1))
-
-
-let obj = {
-    name:"einstein",
-    age:56
-}
-
-
-console.log(Object.keys(obj),'\n',Object.values(obj));
+// c1.showDefaultLocation();
+// console.log(c1.location);
+let value = { x: 5, y: 2 };
+c1.location = value;
+c1.location;
