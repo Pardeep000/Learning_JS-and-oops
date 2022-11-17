@@ -1,47 +1,30 @@
-//By constructor function
-function Circle(rad) {
+function Circle(rad){
     this.radius = rad;
-    this.draw = function () {
-        console.log(`circle drawn with radius => ${rad}`);
+    this.draw = function(){
+        console.log(`circle is drawn of radius => ${rad}`);
     }
 }
 
-// new Circle(5).draw();
-// or
-let circle = new Circle(5);
-circle.draw()
+let c1 = new Circle(5);
+c1.draw();
+c1.location={
+    x:5,
+    y:2
+}
 
-
-// //By factory function
-// function createCircle(radius, x, y) {
-//     return {
-//         radius: radius,
-//         location: {
-//             x: x,//just x
-//             y: y,// just y
-//         },
-//         draw: function () {
-//             console.log(`circle is drawn with features\nradius= ${radius} and point coordinates=${x, y}`)
-//         }
-//     }
+// c1.draw = function(){
+//     console.log(`circle is drawn with following parameters:\nradius = ${rad}\nlocation = ${x,y}`)
 // }
 
+console.log("circle object => ",c1);
+// console.log(c1.keys())
+console.log(Object.values(c1))
 
-// let circle = createCircle(2, 1, 1);
-// circle.draw();
+
+let obj = {
+    name:"einstein",
+    age:56
+}
 
 
-// //By literal notation
-// const circle = {
-//     radius: 2,
-//     location: {
-//         x: 1,
-//         y: 2
-//     },
-//     draw: function () {
-//         console.log(`circle is drawn with features\nradius= ${this.radius} and point coordinates=${this.x, this.y}`)
-//     }
-// }
-
-// circle.draw();
-
+console.log(Object.keys(obj),'\n',Object.values(obj));
