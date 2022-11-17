@@ -10,13 +10,13 @@ class Car {
         if (this.#boolmove == false) console.log('car is not moving, first you have to start it...');
         else console.log('car is moving at ', this.#movingSpeed);
     }
-    changeSpeed(value){
+    changeSpeed(value) {
         this.#movingSpeed = value;
         console.log('car speed is changed to ', this.#movingSpeed);
     }
     stop() {
-        this.#boolmove=false;
-        this.#movingSpeed='0mph';
+        this.#boolmove = false;
+        this.#movingSpeed = '0mph';
         console.log('car is stopped');
     }
     start() {
